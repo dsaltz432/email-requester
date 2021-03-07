@@ -1,0 +1,32 @@
+{
+  "name": "email-requester",
+  "description": "email requester",
+  "version": "0.0.1",
+  "private": true,
+  "license": "ISC",
+  "author": "Daniel Saltz",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GoogleCloudPlatform/nodejs-docs-samples.git"
+  },
+  "scripts": {
+    "pretest": "eslint --ignore-path .gitignore . --fix",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@google-cloud/pubsub": "^2.10.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.3",
+    "helmet": "^3.22.0",
+    "log4js": "^6.3.0",
+    "mongodb": "^3.5.8",
+    "morgan": "^1.10.0",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-strongloop": "^2.1.0"
+  }
+}
