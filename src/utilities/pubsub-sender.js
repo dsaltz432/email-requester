@@ -13,7 +13,11 @@ const publishMessage = async(object) => {
 
   const dataBuffer = Buffer.from(JSON.stringify(object));
 
-  return await pubsubClient.topic(TOPIC_NAME).publish(dataBuffer);
+  const pubsubMessageId = await pubsubClient.topic(TOPIC_NAME).publish(dataBuffer);
+
+  console.log(`published pubsubMessageId [${pubsubMessageId}] over on the bus`);
+
+  return pubsubMessageId;
 };
 
 module.exports = {

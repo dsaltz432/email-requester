@@ -15,16 +15,17 @@ const getSentEmails = async() => {
   return { emails };
 };
 
-const processSendEmailRequest = async({ message }) => {
+const processSendEmailRequest = async({ subject, message }) => {
 
   const emailId = createUUID();
 
   const mongoEmailObject = {
     _id: emailId,
+    subject,
     message,
     events: [{
       timestamp: new Date(),
-      reason: 'received request',
+      reason: 'received email request',
     }],
   };
 
@@ -36,9 +37,10 @@ const processSendEmailRequest = async({ message }) => {
 
   const newEvent = {
     timestamp: new Date,
-    reason: 'published message',
+    reason: 'published message over bus',
     pubsubMessageId,
   };
+
   await getEmailsCollection().updateOne({ _id: emailId }, { $addToSet: { events: newEvent } });
 };
 

@@ -20,7 +20,8 @@ const HTTP_STATUS_CODES = {
 };
 
 const ERROR_CODES = {
-  ERROR_PROCESSING_SEND_EMAIL: { errorId: 'requester.1', statusCode: HTTP_STATUS_CODES.INTERNAL_SERVER_ERROR, logged: false },
+  ERROR_PROCESSING_SEND_EMAIL: { errorId: 'requester.1', statusCode: HTTP_STATUS_CODES.INTERNAL_SERVER_ERROR, logged: true },
+  INVALID_EMAIL_REQUEST: { errorId: 'requester.2', statusCode: HTTP_STATUS_CODES.BAD_REQUEST, logged: true },
 };
 
 const COLLECTIONS = {
